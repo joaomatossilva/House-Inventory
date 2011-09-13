@@ -21,7 +21,7 @@
   </div>
   <div class="field">
     <%= f.label :box %><br />
-    <%= f.text_field :box %>
+    <%= f.collection_select(:box_id, Box.all, :id, :name, {:include_blank => 'None'}) %>
   </div>
   <div class="actions">
     <%= f.submit %>

@@ -1,5 +1,9 @@
 HomeInventory::Application.routes.draw do
-  root :to => 'boxes#index'
+  get "search/index"
+
+  get "search/results"
+
+  root :to => 'search#index'
   
   resources :items
 

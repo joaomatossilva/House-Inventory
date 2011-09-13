@@ -1,0 +1,14 @@
+<h1>Search</h1>
+<%= form_for( @search, :url => { :controller => "search", :action => "index" }, :html => {:method => :get}) do |f|  %>
+  <%= f.text_field :name_contains %>
+  <%= f.submit %>
+<% end %>
+
+<% if @items %>
+<% @items.each do |item| %>
+<div>
+  <h2><%= link_to item.name, item %></h2>
+  <span><%= link_to item.box.name, item.box %>, <%= item.box.location.name %></span>
+</div>
+<% end %>
+<% end %>
